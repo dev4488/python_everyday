@@ -11,7 +11,7 @@ def Weather(city_name):
 	query = 'http://api.openweathermap.org/data/2.5/weather?q=%s&units=metric' % city_name
 	r = requests.get(query)
 	#loads data from API in json format
-	result = json.loads(r.tedatat)
+	result = json.loads(r.text)
 	if result['cod']=='404':
 		print 'Error:city not found,please check name of city',sys.edatait()
 	else:
@@ -26,9 +26,9 @@ if __name__ == '__main__':
 		#prints various data fields
 		print 'Weather |',data['name'],data['sys']['country'],'at',
 		print (datetime.datetime.fromtimestamp(int(data['dt'])).strftime('%H:%M:%S %m-%d-%Y '))
-		print '   ''temp:',data['main']['temp']
-		print '   ''humidity:',data['main']['humidity']
+		print '\ttemp:',data['main']['temp']
+		print '\thumidity:',data['main']['humidity']
 		weather = data['weather']
-		print '  ',[i for i in weather[0].values()][3]
-		print '   ''wind speed:',data['wind']['speed']
+		print '\t',[i for i in weather[0].values()][3]
+		print '\twind speed:',data['wind']['speed']
 	

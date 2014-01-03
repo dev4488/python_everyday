@@ -13,7 +13,7 @@ def Weather(city_name):
 	#loads data from API in json format
 	result = json.loads(r.text)
 	if result['cod']=='404':
-		print 'Error:city not found,please check name of city',sys.edatait()
+		print 'Error:city not found,please check name of city',sys.exit()
 	else:
 		return result
 

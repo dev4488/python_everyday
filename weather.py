@@ -20,7 +20,7 @@ def Weather(city_name):
 
 if __name__ == '__main__':
 	if len(sys.argv)<2 or len(sys.argv)>2 :
-		print  'Error --format: ''./mausam.py city_name '
+		print  'Error --format: ''./weather.py city_name '
 	else:
 		data = Weather(sys.argv[1])
 		#prints various data fields
